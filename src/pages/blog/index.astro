@@ -16,90 +16,44 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
 	</head>
-	<body>
+	<body
+		class="m-0 bg-[linear-gradient(rgb(229_233_240/50%),#fff)] bg-no-repeat font-sans text-lg leading-[1.7] text-body [background-size:100%_600px] [overflow-wrap:break-word] min-[721px]:text-xl"
+	>
 		<Header />
-		<main>
+		<main class="mx-auto w-[60rem] max-w-[calc(100%_-_2em)] p-[1em] min-[721px]:px-[1em] min-[721px]:py-[3em]">
 			<section>
-				<ul>
+				<ul class="m-0 flex list-none flex-wrap gap-[0.5em] p-0 min-[721px]:gap-8">
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
+						posts.map((post, index) => (
+							<li
+								class:list={[
+									'w-full text-center min-[721px]:w-[calc(50%_-_1rem)] min-[721px]:text-left',
+									{ 'min-[721px]:mb-4 min-[721px]:w-full min-[721px]:text-center': index === 0 },
+								]}
+							>
+								<a class="group block no-underline" href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										<Image
+											class:list={[
+												'mb-2 h-auto max-w-full rounded-xl transition-all duration-200 ease-in-out group-hover:shadow-raised',
+												{ 'w-full': index === 0 },
+											]}
+											width={720}
+											height={360}
+											src={post.data.heroImage}
+											alt=""
+										/>
 									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<h4
+										class:list={[
+											'm-0 text-[1.563em] leading-none font-bold text-ink no-underline transition-all duration-200 ease-in-out group-hover:text-accent',
+											{ 'min-[721px]:text-[2.369rem]': index === 0 },
+										]}
+									>
+										{post.data.title}
+									</h4>
+									<p class="m-0 text-muted no-underline transition-all duration-200 ease-in-out group-hover:text-accent">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
