@@ -1,0 +1,27 @@
+---
+import { SITE_TITLE } from '../consts';
+
+const links = [
+	{ href: '/about', label: 'About' },
+	{ href: '/work', label: 'Work' },
+	{ href: '/thoughts', label: 'Thoughts' },
+	{ href: '/misc', label: 'Misc' },
+];
+---
+
+<header class="flex flex-wrap items-center justify-between gap-4 px-6 py-5">
+	<a class="font-bold text-ink no-underline" href="/">{SITE_TITLE}</a>
+	<nav aria-label="Primary navigation">
+		<ul class="flex flex-wrap gap-x-5 gap-y-2">
+			{
+				links.map(({ href, label }) => (
+					<li>
+						<a class="text-sm text-body no-underline hover:text-accent" href={href}>
+							{label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>

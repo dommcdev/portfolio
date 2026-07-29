@@ -1,5 +1,7 @@
 ## Development
 
+This project uses bun, not npm
+
 When starting the dev server, use background mode:
 
 ```
