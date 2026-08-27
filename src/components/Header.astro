@@ -5,6 +5,11 @@ const links = [
 	{ href: '/work', label: 'Work' },
 	{ href: '/posts', label: 'Writing' },
 ];
+
+const isActive = (href: string) =>
+	href === '/'
+		? Astro.url.pathname === '/'
+		: Astro.url.pathname === href || Astro.url.pathname.startsWith(`${href}/`);
 ---
 
 <header class="flex flex-wrap items-center justify-end gap-4 px-6 py-5">
@@ -37,7 +42,14 @@ const links = [
 			{
 				links.map(({ href, label }) => (
 					<li>
-						<a class="text-sm text-body no-underline hover:text-accent" href={href}>
+						<a
+							class:list={[
+								'text-sm no-underline transition-colors hover:text-accent',
+								isActive(href) ? 'text-accent' : 'text-body',
+							]}
+							href={href}
+							aria-current={isActive(href) ? 'page' : undefined}
+						>
 							{label}
 						</a>
 					</li>

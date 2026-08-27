@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: #2337ff;
+  --color-accent: #fab387;
   --color-accent-dark: #000d8a;
   --color-ink: rgb(15 18 25);
   --color-muted: rgb(96 115 159);
@@ -18,7 +18,7 @@
 }
 
 .dark {
-  --color-accent: #8ea1ff;
+  --color-accent: #fab387;
   --color-accent-dark: #bec8ff;
   --color-ink: rgb(248 250 252);
   --color-muted: rgb(148 163 184);
