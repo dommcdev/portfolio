@@ -3,28 +3,35 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: #fab387;
-  --color-accent-dark: #000d8a;
-  --color-ink: rgb(15 18 25);
-  --color-muted: rgb(96 115 159);
-  --color-subtle: rgb(229 233 240);
-  --color-body: rgb(34 41 57);
-  --color-page: rgb(248 250 252);
+  --color-accent: #a64f24;
+  --color-accent-dark: #7c3519;
+  --color-ink: #1e2121;
+  --color-muted: #626359;
+  --color-subtle: #e8ddd3;
+  --color-line: #c7c5be;
+  --color-feather: #6e95a4;
+  --color-body: #2c2d2f;
+  --color-page: #fffaf0;
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --shadow-raised:
-    0 2px 6px rgb(96 115 159 / 25%), 0 8px 24px rgb(96 115 159 / 33%),
-    0 16px 32px rgb(96 115 159 / 33%);
+    0 2px 6px rgb(30 33 33 / 15%), 0 8px 24px rgb(30 33 33 / 18%),
+    0 16px 32px rgb(30 33 33 / 15%);
 }
 
 .dark {
-  --color-accent: #fab387;
-  --color-accent-dark: #bec8ff;
-  --color-ink: rgb(248 250 252);
-  --color-muted: rgb(148 163 184);
-  --color-subtle: rgb(30 41 59);
-  --color-body: rgb(226 232 240);
-  --color-page: rgb(15 18 25);
+  --color-accent: #e2874b;
+  --color-accent-dark: #f0ab79;
+  --color-ink: #fff7ed;
+  --color-muted: #9ca4a1;
+  --color-subtle: #1e2121;
+  --color-line: #3b3f40;
+  --color-feather: #3f7188;
+  --color-body: #d9c8b9;
+  --color-page: #090a0a;
+  --shadow-raised:
+    0 2px 6px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 35%),
+    0 16px 32px rgb(0 0 0 / 30%);
 }
 
 @layer base {

@@ -6,6 +6,7 @@ import '@fontsource/inter/latin-800.css';
 import '@fontsource/jetbrains-mono/latin-400.css';
 import '@fontsource/jetbrains-mono/latin-700.css';
 import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
@@ -23,8 +24,14 @@ const documentTitle = title === SITE_TITLE ? SITE_TITLE : `${title} – ${SITE_T
 	<head>
 		<BaseHead title={documentTitle} description={description} />
 	</head>
-	<body class="flex min-h-svh flex-col">
-		<Header />
-		<slot />
+	<body class="min-h-svh overflow-x-clip">
+		<div class="mx-auto flex min-h-svh w-full max-w-6xl flex-col border-x border-dashed border-line">
+			<Header />
+			<div aria-hidden="true" class="relative left-1/2 w-dvw -translate-x-1/2 border-t border-dashed border-line"></div>
+			<slot />
+			<div aria-hidden="true" class="relative left-1/2 w-dvw -translate-x-1/2 border-t border-dashed border-line"></div>
+			<Footer />
+			<div aria-hidden="true" class="relative left-1/2 w-dvw -translate-x-1/2 border-t border-dashed border-line"></div>
+		</div>
 	</body>
 </html>
