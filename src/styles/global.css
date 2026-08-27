@@ -1,22 +1,47 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-	--color-accent: #2337ff;
-	--color-accent-dark: #000d8a;
-	--color-ink: rgb(15 18 25);
-	--color-muted: rgb(96 115 159);
-	--color-subtle: rgb(229 233 240);
-	--color-body: rgb(34 41 57);
-	--font-sans: 'Inter', sans-serif;
-	--font-mono: 'JetBrains Mono', monospace;
-	--shadow-raised:
-		0 2px 6px rgb(96 115 159 / 25%), 0 8px 24px rgb(96 115 159 / 33%),
-		0 16px 32px rgb(96 115 159 / 33%);
+  --color-accent: #2337ff;
+  --color-accent-dark: #000d8a;
+  --color-ink: rgb(15 18 25);
+  --color-muted: rgb(96 115 159);
+  --color-subtle: rgb(229 233 240);
+  --color-body: rgb(34 41 57);
+  --color-page: rgb(248 250 252);
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --shadow-raised:
+    0 2px 6px rgb(96 115 159 / 25%), 0 8px 24px rgb(96 115 159 / 33%),
+    0 16px 32px rgb(96 115 159 / 33%);
+}
+
+.dark {
+  --color-accent: #8ea1ff;
+  --color-accent-dark: #bec8ff;
+  --color-ink: rgb(248 250 252);
+  --color-muted: rgb(148 163 184);
+  --color-subtle: rgb(30 41 59);
+  --color-body: rgb(226 232 240);
+  --color-page: rgb(15 18 25);
 }
 
 @layer base {
-	code,
-	pre {
-		@apply font-mono;
-	}
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-page font-sans text-body antialiased;
+  }
+
+  code,
+  pre {
+    @apply font-mono;
+  }
 }

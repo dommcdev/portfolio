@@ -1,3 +1,0 @@
-Light/darkmode icon; default to browser, manual override possible with click; sun/moon
-
-Dominic McDevitt: Software and DevOps Engineer
