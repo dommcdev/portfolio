@@ -1,2 +1,8 @@
 Markdown styling (tailwindcss/typography pkg?)
 * Including layout stuff
+
+About page
+Work page
+
+Hover boxes on links
+Add resume link + page
