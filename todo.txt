@@ -3,6 +3,8 @@ Markdown styling (tailwindcss/typography pkg?)
 
 About page
 Work page
+Resume page
 
-Hover boxes on links
-Add resume link + page
+Add github/x/resume links to main page
+Add hover boxes to bottom link icons
+
