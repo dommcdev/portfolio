@@ -8,3 +8,4 @@ Resume page
 Add github/x/resume links to main page
 Add hover boxes to bottom link icons
 
+Add custom rag llm chatbot
